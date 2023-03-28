@@ -12,6 +12,9 @@ class LoginPage extends StatelessWidget {
     final senhaController = TextEditingController();
 
     final ButtonStyle style = ElevatedButton.styleFrom(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
       backgroundColor: Colors.white,
       fixedSize: const Size(double.maxFinite, 45),
       textStyle:
@@ -21,97 +24,80 @@ class LoginPage extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     log(width.toString());
     log('${width * 0.10}');
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 150,
-          ),
-          Card(
-            elevation: 20,
-            //margin: const EdgeInsets.symmetric(horizontal: 500),
-            color: Colors.blueGrey,
-            child: SizedBox(
-              width: 700,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: width * 0.10, vertical: 12),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/brasao_branco.png',
-                      width: 250,
-                    ),
-                    // const SizedBox(
-                    //   height: 12,
-                    // ),
-                    MyInputTextLogin(
-                      //width: 350,
-                      controller: loginController,
-                      hintText: 'E-mail',
-                      icon: Icons.person,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    MyInputTextLogin(
-                      //width: 350,
-                      controller: senhaController,
-                      hintText: 'Senha',
-                      icon: Icons.lock,
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        const Text(
-                          'Esqueceu a senha?',
+    return Material(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 150,
+            ),
+            Image.asset(
+              'assets/images/logo.png',
+              
+            ),
+            Container(
+              color: Color.fromARGB(198, 1, 188, 152),
+              child: SizedBox(
+                width: 700,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: width * 0.10, vertical: 12),
+                  child: Column(
+                    children: [
+                      MyInputTextLogin(
+                        controller: loginController,
+                        hintText: 'E-mail',
+                        icon: Icons.person,
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      MyInputTextLogin(
+                        //width: 350,
+                        controller: senhaController,
+                        hintText: 'Senha',
+                        icon: Icons.lock,
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              'Esqueci a senha',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      ElevatedButton(
+                        style: style,
+                        onPressed: () => Get.toNamed('/home'),
+                        child: const Text(
+                          'Entrar',
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Clique Aqui',
-                            style: TextStyle(
-                                color: Colors.amber[800],
-                                fontWeight: FontWeight.bold),
+                            color: Color.fromARGB(198, 1, 188, 152),
                           ),
                         ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    ElevatedButton(
-                      style: style,
-                      onPressed: () => Get.toNamed('/home'),
-                      child: const Text(
-                        'Entrar',
-                        style: TextStyle(
-                          color: Colors.blueGrey,
-                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Divider(),
-                    Image.asset(
-                      'assets/images/brasao_planejamento.png',
-                      width: 250,
-                    )
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -145,7 +131,7 @@ class MyInputTextLogin extends StatelessWidget {
         //label: Text('E-mail'),
         hintText: hintText,
         labelStyle: const TextStyle(color: Colors.blueGrey),
-        prefixIcon: Icon(icon),
+        prefixIcon: Icon(icon, color: Color.fromARGB(198, 1, 188, 152),),
       ),
     );
   }
