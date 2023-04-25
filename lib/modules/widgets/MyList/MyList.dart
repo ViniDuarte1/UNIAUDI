@@ -14,7 +14,7 @@ class MyList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.7 * 0.2,
+        height: MediaQuery.of(context).size.height * 0.7 * 0.25,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -42,17 +42,28 @@ class MyList extends StatelessWidget {
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
-              height: 70,
+              height: 80,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
+                children: const [
+                  ListOption(
+                    nome: 'teste1',
+                  ),
+                  ListOption(
+                    nome: 'teste2',
+                  ),
+                  ListOption(
+                    nome: 'teste3',
+                  ),
+                  ListOption(
+                    nome: 'teste4',
+                  ),
+                  ListOption(
+                    nome: 'teste5',
+                  ),
+                  ListOption(
+                    nome: 'teste6',
+                  ),
                 ],
               ),
             ),
