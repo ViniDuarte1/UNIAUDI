@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../../../components/option/listoption.dart';
-
-class MyList extends StatelessWidget {
-  const MyList({super.key, required this.texttitle});
-
-  final String texttitle;
+class MyInfo extends StatelessWidget {
+  const MyInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return //TESTE DE BOTAO TBM
+        Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
         height: MediaQuery.of(context).size.height * 0.7 * 0.2,
@@ -34,27 +29,35 @@ class MyList extends StatelessWidget {
                     color: Color.fromARGB(153, 180, 177, 177),
                   ),
                   child: Text(
-                    texttitle,
+                    "CONFIGURAÇÂO ATUAL",
                     textAlign: TextAlign.center,
                   ),
-                ),
+                )
               ],
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: 70,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
-                  ListOption(),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        width: 70,
+                        height: 50,
+                        color: Colors.grey,
+                      ),
+                    )
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('aqui vai ficar '),
+                    Text('o botao pra ativar '),
+                    Text('automatização'),
+                  ],
+                )
+              ],
             ),
           ],
         ),

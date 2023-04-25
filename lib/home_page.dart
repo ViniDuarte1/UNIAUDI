@@ -5,6 +5,10 @@ import 'package:get/get.dart';
 import 'package:uniaudi/modules/widgets/MyList/MyList.dart';
 import 'package:uniaudi/modules/widgets/botao/mybutton.dart';
 
+import 'modules/widgets/MyInfo/info.dart';
+import 'modules/widgets/rota/rota.dart';
+import 'modules/widgets/transcricao/transcricao.dart';
+
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
@@ -93,158 +97,16 @@ class HomePage extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             color: Color.fromARGB(179, 209, 207, 207),
             child: Column(
-              children: [
-
-                //TESTE DE BOTAO TBM
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * 0.7 * 0.2,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              height: 20,
-                              width: 300,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Color.fromARGB(153, 180, 177, 177),
-                              ),
-                              child: Text(
-                                "CONFIGURAÇÂO ATUAL",
-                                textAlign: TextAlign.center,
-                              ),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              children: [
-                                Text('aqui fica qual é config atual'),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10),
-                                  child: Container(
-                                    width: 40,
-                                    height: 40,
-                                    color: Colors.red,
-                                  ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Text(
-                                  'aqui vai ficar '
-                                ),
-                                Text('o botao pra ativar '),
-                                Text('automatização'),
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-
-                //AQUI COMEÇA MEUS BOTAO
-                MyList(texttitle: 'PRESSETS'),
-                MyList(texttitle: 'CONFIGURAÇÕES DO USUARIO'),
-
+              children: [    
+                MyInfo(),
+                MyList(texttitle: 'PRESSETS',),
+                MyList(texttitle: 'CONFIGURAÇÕES DO USUARIO',),
                 //TESTE DE BOTAO
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        height: MediaQuery.of(context).size.height * 0.7 * 0.2,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  height: 20,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(153, 180, 177, 177),
-                                  ),
-                                  child: Text(
-                                    "TRANSCRIÇÃO",
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Icon(
-                              Icons.mic,
-                              size: 50,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        height: MediaQuery.of(context).size.height * 0.7 * 0.2,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  height: 20,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(153, 180, 177, 177),
-                                  ),
-                                  child: Text(
-                                    "ROTA",
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Icon(
-                              Icons.map,
-                              size: 50,
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
+                    Transcricao(),
+                    Rota(),
                   ],
                 ),
               ],
