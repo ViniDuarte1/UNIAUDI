@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
 class MyInfo extends StatefulWidget {
-  const MyInfo({super.key});
+  MyInfo({super.key,  this.nomeselecionado});
+  
+  String? nomeselecionado;
+  
 
   @override
   State<MyInfo> createState() => _MyInfoState();
 }
 
 class _MyInfoState extends State<MyInfo> {
-  bool isSwitched = false;
-  String? selectedOption;
+    bool isSwitched = false;
+    
 
   @override
   Widget build(BuildContext context) {
-    return //TESTE DE BOTAO TBM
-        Padding(
+    return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
         height: MediaQuery.of(context).size.height * 0.7 * 0.25,
@@ -55,8 +57,8 @@ class _MyInfoState extends State<MyInfo> {
                         width: 70,
                         height: 60,
                         color: Colors.grey,
-                        child: Center(
-                          child: Text(selectedOption ?? ""),
+                         child: Center(
+                          child: Text(widget.nomeselecionado ?? ""),
                         ),
                       ),
                     )

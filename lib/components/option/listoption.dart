@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:uniaudi/modules/widgets/MyInfo/info.dart';
 
 class ListOption extends StatefulWidget {
-  const ListOption({super.key, required this.nome});
-
+  const ListOption({super.key, required this.nome, required this.callback});
   final String nome;
+  final Function callback;
+
  
 
   @override
@@ -11,6 +13,8 @@ class ListOption extends StatefulWidget {
 }
 
 class _ListOptionState extends State<ListOption> {
+
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,7 +25,7 @@ class _ListOptionState extends State<ListOption> {
         color: Colors.grey,
         child: TextButton(
           onPressed: () {
-           
+            widget.callback(widget.nome); // Chamada do callback.
           },
           child: Text(widget.nome),
         ),

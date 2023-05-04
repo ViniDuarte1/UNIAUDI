@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-
 import '../../../components/option/listoption.dart';
 
-class MyList extends StatelessWidget {
-  const MyList({super.key, required this.texttitle});
+
+class MyList extends StatefulWidget {
+  MyList({Key? key, required this.texttitle,}) : super(key: key);
 
   final String texttitle;
+
+  
+
+  @override
+  State<MyList> createState() => _MyListState();
+}
+
+class _MyListState extends State<MyList> {
+  String stringASerMostradaNoSegundoWidget = '';
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +42,7 @@ class MyList extends StatelessWidget {
                     color: Color.fromARGB(153, 180, 177, 177),
                   ),
                   child: Text(
-                    texttitle,
+                    widget.texttitle,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -45,25 +53,26 @@ class MyList extends StatelessWidget {
               height: 80,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: const [
-                  ListOption(
-                    nome: 'teste1',
-                  ),
+                children: [
                   ListOption(
                     nome: 'teste2',
+                    callback: (String nome) {
+                      setState(() {
+                        stringASerMostradaNoSegundoWidget = nome;
+
+                      });
+                    },
                   ),
                   ListOption(
-                    nome: 'teste3',
+                    nome: 'teste1',
+                    callback: (String nome) {
+                      setState(() {
+                        stringASerMostradaNoSegundoWidget = nome;
+                        
+                      });
+                    },
                   ),
-                  ListOption(
-                    nome: 'teste4',
-                  ),
-                  ListOption(
-                    nome: 'teste5',
-                  ),
-                  ListOption(
-                    nome: 'teste6',
-                  ),
+                  Text(stringASerMostradaNoSegundoWidget), //text de teste
                 ],
               ),
             ),

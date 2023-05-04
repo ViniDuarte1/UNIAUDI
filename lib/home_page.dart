@@ -92,10 +92,14 @@ class HomePage extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             color: Color.fromARGB(179, 209, 207, 207),
             child: Column(
-              children: [    
+              children: [
                 MyInfo(),
-                MyList(texttitle: 'PRESSETS',),
-                MyList(texttitle: 'CONFIGURAÇÕES DO USUARIO',),
+                MyList(
+                  texttitle: 'PRESSETS',
+                ),
+                MyList(
+                  texttitle: 'CONFIGURAÇÕES DO USUARIO',
+                ),
                 //TESTE DE BOTAO
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
