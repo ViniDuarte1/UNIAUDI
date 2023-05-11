@@ -1,12 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:uniaudi/controller/config_controller.dart';
 import 'package:uniaudi/home_page.dart';
-import 'package:uniaudi/modules/autenticacao/login_page.dart';
-
 
 
 void main() {
@@ -39,7 +35,7 @@ class MyApp extends StatelessWidget {
       ),
        initialRoute: '/home',
       routes: {
-        '/home': (context) =>  HomePage(),
+        '/home': (context) =>  const HomePage(),
       }
     );
   }

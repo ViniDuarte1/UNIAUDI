@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:uniaudi/modules/widgets/MyInfo/info.dart';
 import 'package:provider/provider.dart';
-
 import '../../controller/config_controller.dart';
 
 class ListOption extends StatefulWidget {
   const ListOption({super.key, required this.nome});
   final String nome;
-//  final Function callback;
-
- 
 
   @override
   State<ListOption> createState() => _ListOptionState();
@@ -33,9 +28,14 @@ class _ListOptionState extends State<ListOption> {
           onPressed: () {
             configController.selectconfig(widget.nome);
           },
-          child: Text(widget.nome),
+          child: Text(widget.nome,
+          style: const TextStyle(
+            color: Colors.red,
+            fontSize: 10,
+          ),
         ),
       ),
+    ),
     );
   }
 }

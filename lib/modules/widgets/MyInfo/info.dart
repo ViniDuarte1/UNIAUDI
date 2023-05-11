@@ -40,7 +40,7 @@ class _MyInfoState extends State<MyInfo> {
                   width: 300,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(153, 180, 177, 177),
+                    color: const Color.fromARGB(153, 180, 177, 177),
                   ),
                   child: const Text(
                     "CONFIGURAÇÂO ATUAL",
@@ -75,8 +75,8 @@ class _MyInfoState extends State<MyInfo> {
                       onChanged: (value) {
                         setState(() {
                           isSwitched = value;
-                          print(isSwitched);
-                        });
+                        //  print(isSwitched);
+                        },);
                       },
                       activeTrackColor: Colors.lightGreenAccent,
                       activeColor: Colors.green,

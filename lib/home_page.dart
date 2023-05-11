@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:uniaudi/controller/config_controller.dart';
 import 'package:uniaudi/modules/widgets/MyList/MyList.dart';
 import 'modules/widgets/MyInfo/info.dart';
 import 'modules/widgets/rota/rota.dart';
 import 'modules/widgets/transcricao/transcricao.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -37,7 +35,7 @@ class _HomePageState extends State<HomePage> {
           Container(
               height: MediaQuery.of(context).size.height * 0.20,
               width: MediaQuery.of(context).size.width,
-              color: Color.fromARGB(255, 93, 190, 125),
+              color: const Color.fromARGB(255, 93, 190, 125),
               child: Column(
                 children: [
                   Row(
@@ -58,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 20),
+                        padding: const EdgeInsets.only(left: 20),
                         child: Column(
                           children: [
                             const SizedBox(
@@ -102,20 +100,20 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: MediaQuery.of(context).size.height * 0.80,
             width: MediaQuery.of(context).size.width,
-            color: Color.fromARGB(179, 209, 207, 207),
+            color: const Color.fromARGB(179, 209, 207, 207),
             child: Column(
               children: [
                 MyInfo(),
-                MyList(
+                const MyList(
                   texttitle: 'PRESSETS',
                 ),
-                MyList(
+                const MyList(
                   texttitle: 'CONFIGURAÇÕES DO USUARIO',
                 ),
                 //TESTE DE BOTAO
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     Transcricao(),
                     Rota(),
                   ],

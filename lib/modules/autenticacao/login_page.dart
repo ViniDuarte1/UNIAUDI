@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
               height: 118,
             ),
             Container(
-              color: Color.fromARGB(198, 1, 188, 152),
+              color: const Color.fromARGB(198, 1, 188, 152),
               child: SizedBox(
                 width: 700,
                 child: Padding(
@@ -130,7 +130,7 @@ class MyInputTextLogin extends StatelessWidget {
         //label: Text('E-mail'),
         hintText: hintText,
         labelStyle: const TextStyle(color: Colors.blueGrey),
-        prefixIcon: Icon(icon, color: Color.fromARGB(198, 1, 188, 152),),
+        prefixIcon: Icon(icon, color: const Color.fromARGB(198, 1, 188, 152),),
       ),
     );
   }

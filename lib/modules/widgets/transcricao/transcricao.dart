@@ -31,19 +31,19 @@ class _TranscricaoState extends State<Transcricao> {
                                   width: 100,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: Color.fromARGB(153, 180, 177, 177),
+                                    color: const Color.fromARGB(153, 180, 177, 177),
                                   ),
-                                  child: Text(
+                                  child: const Text(
                                     "TRANSCRIÇÃO",
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
-                            Icon(
+                            const Icon(
                               Icons.mic,
                               size: 50,
                             ),
