@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uniaudi/controller/config_controller.dart';
 
 class MyInfo extends StatefulWidget {
   MyInfo({super.key,  this.nomeselecionado});
@@ -16,6 +18,8 @@ class _MyInfoState extends State<MyInfo> {
 
   @override
   Widget build(BuildContext context) {
+
+    final configController = Provider.of<ConfigController>(context);
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
@@ -38,7 +42,7 @@ class _MyInfoState extends State<MyInfo> {
                     borderRadius: BorderRadius.circular(20),
                     color: Color.fromARGB(153, 180, 177, 177),
                   ),
-                  child: Text(
+                  child: const Text(
                     "CONFIGURAÇÂO ATUAL",
                     textAlign: TextAlign.center,
                   ),
@@ -58,7 +62,7 @@ class _MyInfoState extends State<MyInfo> {
                         height: 60,
                         color: Colors.grey,
                          child: Center(
-                          child: Text(widget.nomeselecionado ?? ""),
+                          child: Text(configController.configpresset),
                         ),
                       ),
                     )

@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uniaudi/controller/config_controller.dart';
 import 'package:uniaudi/modules/widgets/MyList/MyList.dart';
 import 'modules/widgets/MyInfo/info.dart';
 import 'modules/widgets/rota/rota.dart';
 import 'modules/widgets/transcricao/transcricao.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final ButtonStyle style = ElevatedButton.styleFrom(
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(20),
@@ -15,10 +22,15 @@ class HomePage extends StatelessWidget {
     fixedSize: const Size(double.maxFinite, 25),
     textStyle:
         const TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),
+
+        
   );
+  
 
   @override
   Widget build(BuildContext context) {
+    
+
     return Scaffold(
       body: Column(
         children: [

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uniaudi/controller/config_controller.dart';
 import '../../../components/option/listoption.dart';
 
 
@@ -19,6 +21,9 @@ class _MyListState extends State<MyList> {
 
   @override
   Widget build(BuildContext context) {
+
+    final configController = Provider.of<ConfigController>(context);
+
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
@@ -53,26 +58,26 @@ class _MyListState extends State<MyList> {
               height: 80,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  ListOption(
+                children: const [
+                   ListOption(
                     nome: 'teste2',
-                    callback: (String nome) {
-                      setState(() {
-                        stringASerMostradaNoSegundoWidget = nome;
-
-                      });
-                    },
+                    // callback: (String nome) {
+                    //   setState(() {
+                    //     //stringASerMostradaNoSegundoWidget = nome;
+                    //     //configController.selectconfig(nome);
+                    //   });
+                    // },
                   ),
-                  ListOption(
+                   ListOption(
                     nome: 'teste1',
-                    callback: (String nome) {
-                      setState(() {
-                        stringASerMostradaNoSegundoWidget = nome;
-                        
-                      });
-                    },
+                    // callback: (String nome) {
+                    //   setState(() {
+                    //    // stringASerMostradaNoSegundoWidget = nome;
+                    //    //configController.selectconfig(nome);        
+                    //   },
+                    //   );
+                    // },
                   ),
-                  Text(stringASerMostradaNoSegundoWidget), //text de teste
                 ],
               ),
             ),

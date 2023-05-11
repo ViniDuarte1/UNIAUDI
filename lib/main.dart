@@ -1,11 +1,22 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import 'package:uniaudi/controller/config_controller.dart';
 import 'package:uniaudi/home_page.dart';
+import 'package:uniaudi/modules/autenticacao/login_page.dart';
 
-import 'modules/autenticacao/login_page.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ConfigController()),
+      ],
+      child: const MyApp(),
+     ),);
+     
 }
 
 class MyApp extends StatelessWidget {
@@ -26,12 +37,10 @@ class MyApp extends StatelessWidget {
           toolbarHeight: 80,
         ),
       ),
-       initialRoute: '/',
-      getPages: [
-        GetPage(name: '/', page: () => const LoginPage()),
-        GetPage(name: '/home', page: () =>  HomePage()),
-        
-      ]
+       initialRoute: '/home',
+      routes: {
+        '/home': (context) =>  HomePage(),
+      }
     );
   }
 }
