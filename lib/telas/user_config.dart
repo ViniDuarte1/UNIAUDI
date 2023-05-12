@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-
 import 'home_page.dart';
 
 class ConfigPage extends StatefulWidget {
@@ -16,7 +13,7 @@ class _ConfigPageState extends State<ConfigPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Configurações'),
+        title: const Text('Config'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -25,15 +22,15 @@ class _ConfigPageState extends State<ConfigPage> {
         ),
         actions: <Widget>[
           ElevatedButton(
-            child: const Text('Adicionar'),
+            child: const Text('Add'),
             onPressed: () {},
           ),
           ElevatedButton(
-            child: const Text('Alterar'),
+            child: const Text('Al'),
             onPressed: () {},
           ),
           ElevatedButton(
-            child: const Text('Excluir'),
+            child: const Text('Ex'),
             onPressed: () {},
           ),
         ],

@@ -33,7 +33,7 @@ class _ListOptionState extends State<ListOption> {
               MaterialPageRoute(
                 builder: (context) => const ConfigPage(),
               ),
-            );
+            ); 
           },
           child: Text(widget.nome,
           style: const TextStyle(
