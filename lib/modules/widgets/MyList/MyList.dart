@@ -19,7 +19,7 @@ class _MyListState extends State<MyList> {
   @override
   Widget build(BuildContext context) {
 
-    final List<String> nomes = ['teste1', 'teste2', 'teste3', 'teste4', 'teste5', 'teste6'];
+    final List<String> nomes = ['teste1',];
 
     return Padding(
       padding: const EdgeInsets.all(10),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../../controller/config_controller.dart';
+import '../../telas/user_config.dart';
 
 class ListOption extends StatefulWidget {
   const ListOption({super.key, required this.nome});
@@ -27,6 +29,11 @@ class _ListOptionState extends State<ListOption> {
         child: TextButton(
           onPressed: () {
             configController.selectconfig(widget.nome);
+            navigator!.push(
+              MaterialPageRoute(
+                builder: (context) => const ConfigPage(),
+              ),
+            );
           },
           child: Text(widget.nome,
           style: const TextStyle(

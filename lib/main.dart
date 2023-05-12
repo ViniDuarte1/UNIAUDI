@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:uniaudi/controller/config_controller.dart';
-import 'package:uniaudi/home_page.dart';
+import 'package:uniaudi/telas/home_page.dart';
+import 'package:uniaudi/telas/user_config.dart';
 
 
 void main() {
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       ),
        initialRoute: '/home',
       routes: {
-        '/home': (context) =>  const HomePage(),
+        '/home': (context) =>  const HomePage(key: null,),
       }
     );
   }

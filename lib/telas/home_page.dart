@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uniaudi/modules/widgets/MyList/MyList.dart';
-import 'modules/widgets/MyInfo/info.dart';
-import 'modules/widgets/rota/rota.dart';
-import 'modules/widgets/transcricao/transcricao.dart';
+import '../modules/widgets/MyInfo/info.dart';
+import '../modules/widgets/rota/rota.dart';
+import '../modules/widgets/transcricao/transcricao.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,8 +27,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    
-
     return Scaffold(
       body: Column(
         children: [
