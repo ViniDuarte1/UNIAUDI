@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uniaudi/modules/widgets/MyList/MyList.dart';
 import '../modules/widgets/MyInfo/info.dart';
+import '../modules/widgets/UserList/user_list.dart';
 import '../modules/widgets/rota/rota.dart';
 import '../modules/widgets/transcricao/transcricao.dart';
 
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Container(
-              height: MediaQuery.of(context).size.height * 0.20,
+              height: MediaQuery.of(context).size.height * 0.18,
               width: MediaQuery.of(context).size.width,
               color: const Color.fromARGB(255, 93, 190, 125),
               child: Column(
@@ -96,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               )),
           Container(
-            height: MediaQuery.of(context).size.height * 0.80,
+            height: MediaQuery.of(context).size.height * 0.82 ,
             width: MediaQuery.of(context).size.width,
             color: const Color.fromARGB(179, 209, 207, 207),
             child: Column(
@@ -105,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                 const MyList(
                   texttitle: 'PRESSETS',
                 ),
-                const MyList(
+                const UserList(
                   texttitle: 'CONFIGURAÇÕES DO USUARIO',
                 ),
                 //TESTE DE BOTAO

@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../../telas/transcricao_page.dart';
 
-class Transcricao extends StatefulWidget {
-  const Transcricao({super.key});
+import '../../../components/option/listoption.dart';
+
+class UserList extends StatefulWidget {
+  final String texttitle;
+
+  const UserList({
+    Key? key,
+    required this.texttitle,
+  }) : super(key: key);
 
   @override
-  State<Transcricao> createState() => _TranscricaoState();
+  State<UserList> createState() => _UserListState();
 }
 
-class _TranscricaoState extends State<Transcricao> {
+class _UserListState extends State<UserList> {
   @override
   Widget build(BuildContext context) {
+    final List<String> nomes = [
+      'teste1',
+    ];
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.4,
-        height: MediaQuery.of(context).size.height * 0.7 * 0.2,
+        height: MediaQuery.of(context).size.height * 0.7 * 0.25,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Colors.white,
@@ -29,32 +37,26 @@ class _TranscricaoState extends State<Transcricao> {
               children: [
                 Container(
                   height: 20,
-                  width: 100,
+                  width: 300,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: const Color.fromARGB(153, 180, 177, 177),
                   ),
-                  child: const Text(
-                    "TRANSCRIÇÃO",
+                  child: Text(
+                    widget.texttitle,
                     textAlign: TextAlign.center,
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            IconButton(
-              iconSize: 50,
-              icon: Icon(Icons.mic),
-              onPressed: () {
-                 navigator!.push(
-            MaterialPageRoute(
-              builder: (context) => const TranscriptPage(),
-            ),
-          ); 
-              },
-            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 80,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: nomes.map((nome) => ListOption(nome: nome)).toList(),
+              ),
+            )
           ],
         ),
       ),

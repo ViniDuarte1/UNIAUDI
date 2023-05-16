@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../../controller/config_controller.dart';
-import '../../telas/user_config.dart';
+import '../../telas/user_config_page.dart';
 
 class ListOption extends StatefulWidget {
   const ListOption({super.key, required this.nome});
