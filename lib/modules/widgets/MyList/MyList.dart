@@ -19,7 +19,7 @@ class _MyListState extends State<MyList> {
   @override
   Widget build(BuildContext context) {
 
-    final List<String> nomes = ['teste1',];
+    final List<String> nomes = ['PRESSET 1','PRESSET 2','PRESSET 3','PRESSET 4','PRESSET 5','PRESSET 6','PRESSET 7',];
 
     return Padding(
       padding: const EdgeInsets.all(10),
@@ -38,7 +38,7 @@ class _MyListState extends State<MyList> {
               children: [
                 Container(
                   height: 20,
-                  width: 300,
+                  width: MediaQuery.of(context).size.width * 0.7,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color:const Color.fromARGB(153, 180, 177, 177),

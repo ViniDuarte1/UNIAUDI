@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:uniaudi/controller/config_controller.dart';
 import 'package:uniaudi/telas/home_page.dart';
-import 'package:uniaudi/telas/user_config_page.dart';
+
 
 
 void main() {

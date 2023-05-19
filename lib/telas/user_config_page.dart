@@ -13,6 +13,9 @@ class _ConfigPageState extends State<ConfigPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 50,
+        elevation: 10,
+        backgroundColor: const Color.fromARGB(255, 93, 190, 125),
         title: const Text('Config'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -21,16 +24,19 @@ class _ConfigPageState extends State<ConfigPage> {
           },
         ),
         actions: <Widget>[
-          ElevatedButton(
-            child: const Text('Add'),
+          IconButton(
+            padding: EdgeInsets.all(10),
+            icon: Icon(Icons.add),
             onPressed: () {},
           ),
-          ElevatedButton(
-            child: const Text('Al'),
+          IconButton(
+            padding: EdgeInsets.all(10),
+            icon: Icon(Icons.edit),
             onPressed: () {},
           ),
-          ElevatedButton(
-            child: const Text('Ex'),
+          IconButton(
+            padding: EdgeInsets.all(10),
+            icon: Icon(Icons.delete),
             onPressed: () {},
           ),
         ],

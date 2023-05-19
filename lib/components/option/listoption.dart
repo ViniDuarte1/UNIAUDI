@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../../controller/config_controller.dart';
-import '../../telas/user_config_page.dart';
 
 class ListOption extends StatefulWidget {
   const ListOption({super.key, required this.nome});
@@ -23,17 +21,15 @@ class _ListOptionState extends State<ListOption> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
+        decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.grey[300],
+        ),
         width: 70,
         height: 70,
-        color: Colors.grey,
         child: TextButton(
           onPressed: () {
-            configController.selectconfig(widget.nome);
-            navigator!.push(
-              MaterialPageRoute(
-                builder: (context) => const ConfigPage(),
-              ),
-            ); 
+            configController.selectconfig(widget.nome);    
           },
           child: Text(widget.nome,
           style: const TextStyle(
