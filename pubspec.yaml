@@ -38,6 +38,8 @@ dependencies:
   highlight_text: ^1.6.0
   avatar_glow: ^2.0.2
   flutter_speech: ^2.0.0
+  sqflite: ^2.2.8+4
+  sqflite_common_ffi: any
 
 dev_dependencies:
   flutter_test:

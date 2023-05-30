@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
 
 class ConfigPage extends StatefulWidget {
   const ConfigPage({Key? key}) : super(key: key);
@@ -18,25 +17,25 @@ class _ConfigPageState extends State<ConfigPage> {
         backgroundColor: const Color.fromARGB(255, 93, 190, 125),
         title: const Text('Config'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
         actions: <Widget>[
           IconButton(
-            padding: EdgeInsets.all(10),
-            icon: Icon(Icons.add),
+            padding: const EdgeInsets.all(10),
+            icon: const Icon(Icons.add),
             onPressed: () {},
           ),
           IconButton(
-            padding: EdgeInsets.all(10),
-            icon: Icon(Icons.edit),
+            padding: const EdgeInsets.all(10),
+            icon: const Icon(Icons.edit),
             onPressed: () {},
           ),
           IconButton(
-            padding: EdgeInsets.all(10),
-            icon: Icon(Icons.delete),
+            padding: const EdgeInsets.all(10),
+            icon: const Icon(Icons.delete),
             onPressed: () {},
           ),
         ],

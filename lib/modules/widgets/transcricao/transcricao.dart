@@ -46,7 +46,7 @@ class _TranscricaoState extends State<Transcricao> {
             ),
             IconButton(
               iconSize: 50,
-              icon: Icon(Icons.mic),
+              icon: const Icon(Icons.mic),
               onPressed: () {
                  navigator!.push(
             MaterialPageRoute(

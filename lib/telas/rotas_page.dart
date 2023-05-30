@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class RoutePage extends StatefulWidget {
   const RoutePage({super.key});
@@ -19,21 +17,102 @@ class _RoutePageState extends State<RoutePage> {
         backgroundColor: const Color.fromARGB(255, 93, 190, 125),
         title: const Text('Rota de automação'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
+      body: 
+      //rota 1
+      Column(
+        children: [
           Padding(
-            padding:
-                const EdgeInsets.only(top: 10, bottom: 10, left: 20, right: 20),
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.grey[300],
+            ),
+            width: 70,
+            height: 70,
+            child: TextButton(
+              onPressed: () {},
+              child: const Text('URBANO',
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 10,
+              ),
+            ),
           ),
+    ),
+    ),
+    //rota 1
+      Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.grey[300],
+        ),
+        width: 70,
+        height: 70,
+        child: TextButton(
+          onPressed: () {},
+          child: const Text('ESCOLAR',
+          style: TextStyle(
+            color: Colors.red,
+            fontSize: 10,
+          ),
+        ),
+      ),
+    ),
+    ),
+    //rota 1
+      Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.grey[300],
+        ),
+        width: 70,
+        height: 70,
+        child: TextButton(
+          onPressed: () {},
+          child: const Text('TRABALHO',
+          style: TextStyle(
+            color: Colors.red,
+            fontSize: 10,
+          ),
+        ),
+      ),
+    ),
+    ),
+    //rota 1
+      Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.grey[300],
+        ),
+        width: 70,
+        height: 70,
+        child: TextButton(
+          onPressed: () {},
+          child: const Text('CASEIRO',
+          style: TextStyle(
+            color: Colors.red,
+            fontSize: 10,
+          ),
+        ),
+      ),
+    ),
+    )
         ],
       ),
+    
     );
   }
 }

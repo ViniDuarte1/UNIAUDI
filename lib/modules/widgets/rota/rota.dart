@@ -46,7 +46,7 @@ class _RotaState extends State<Rota> {
             ),
             IconButton(
               iconSize: 50,
-              icon: Icon(Icons.map),
+              icon: const Icon(Icons.map),
               onPressed: () {
                 navigator!.push(
                   MaterialPageRoute(
