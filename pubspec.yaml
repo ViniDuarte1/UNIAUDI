@@ -37,9 +37,9 @@ dependencies:
   speech_to_text: ^6.1.1
   highlight_text: ^1.6.0
   avatar_glow: ^2.0.2
-  flutter_speech: ^2.0.0
   sqflite: ^2.2.8+4
-  sqflite_common_ffi: any
+  flutter_slidable: ^3.0.0
+
 
 dev_dependencies:
   flutter_test:

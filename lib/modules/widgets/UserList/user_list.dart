@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:uniaudi/components/option.dart';
+import 'package:provider/provider.dart';
+import 'package:uniaudi/controller/options.dart';
 import 'package:uniaudi/database/option_dao.dart';
+import 'package:uniaudi/telas/user_config_page.dart';
 import '../../../components/option/listoption.dart';
-import '../../../telas/user_config_page.dart';
 
 class UserList extends StatefulWidget {
   final String texttitle;
@@ -20,22 +21,7 @@ class UserList extends StatefulWidget {
 class _UserListState extends State<UserList> {
   @override
   Widget build(BuildContext context) {
-    final List<String> nomes = [
-      'USER 1',
-      'USER 2',
-      'USER 3',
-      'USER 4',
-      'USER 5',
-      'USER 6',
-      'USER 7'
-    ];
-
-    // void adicionarOpcao() {
-    //   setState(() {
-    //     nomes.add('Nova Opção1');
-    //   });
-    // }
-
+    final optionController = Provider.of<OptionController>(context);
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
@@ -70,13 +56,12 @@ class _UserListState extends State<UserList> {
                 ),
                 IconButton(
                   alignment: const Alignment(0, 100),
-                  onPressed: () {
-                    OptionDao().Save(ListOption(nome: 'teste'));
-                    // navigator!.push(
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const ConfigPage(),
-                    //   ),
-                    // );
+                  onPressed: () {      
+                    navigator!.push(
+                      MaterialPageRoute(
+                        builder: (context) => ConfigPage(),
+                      ),
+                    );
                   },
                   icon: const Icon(Icons.add_circle_outline),
                 ),
@@ -85,36 +70,13 @@ class _UserListState extends State<UserList> {
             SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 80,
-              child: FutureBuilder<List<ListOption>>(
-                  future: OptionDao().findAll(),
-                  builder: (context, snapshot) {
-                    List<ListOption>? options = snapshot.data;
-                    switch (snapshot.connectionState) {
-                      case ConnectionState.none:
-                        return const Center(child: Text('Erro de conexão'));
-                      case ConnectionState.waiting:
-                        return const Center(child: CircularProgressIndicator());
-                      case ConnectionState.active:
-                        return const Center(child: CircularProgressIndicator());
-                      case ConnectionState.done:
-                        if (snapshot.hasData && options != null) {
-                          if (options.isNotEmpty) {
-                            return ListView.builder(
-                              itemCount: options.length,
-                              itemBuilder: (context, index) {
-                                final ListOption option = options[index];
-                                return option;
-                              },
-                            );
-                          }
-                          return const Center(
-                            child: Text('Nenhuma opção cadastrada'),
-                          );
-                        }
-                        return Text('Erro ao carregar tarefas');
-                    }
-                    return const Text('Erro desconhecido');
-                  }),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: optionController.options.length,
+                 itemBuilder: (context, index) {
+                  return ListOption(nome: optionController.options[index].nome);
+                 },
+              ),
             ),
           ],
         ),

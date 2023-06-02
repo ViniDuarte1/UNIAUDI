@@ -106,8 +106,10 @@ class _HomePageState extends State<HomePage> {
                 const MyList(
                   texttitle: 'PRESSETS',
                 ),
+                
                 const UserList(
-                  texttitle: 'CONFIGURAÇÕES DO USUARIO',
+                    texttitle: 'CONFIGURAÇÕES DO USUARIO',
+                  
                 ),
                 //TESTE DE BOTAO
                 Row(
