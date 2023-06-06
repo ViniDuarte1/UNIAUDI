@@ -18,4 +18,12 @@ class OptionController extends ChangeNotifier {
     options.remove(option);
     notifyListeners();
   }
+
+   void updateOption(ListOption oldOption, ListOption newOption) {
+    final index = options.indexOf(oldOption);
+    if (index != -1) {
+      options[index] = newOption;
+      notifyListeners();
+    }
+  }
 }

@@ -5,7 +5,7 @@ import 'package:uniaudi/controller/config_controller.dart';
 import 'package:uniaudi/controller/options.dart';
 import 'package:uniaudi/telas/home_page.dart';
 
-import 'components/option/listoption.dart';
+
 
 
 

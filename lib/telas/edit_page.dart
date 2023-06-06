@@ -3,24 +3,35 @@ import 'package:provider/provider.dart';
 import 'package:uniaudi/components/option/listoption.dart';
 import 'package:uniaudi/controller/options.dart';
 
-class AddPage extends StatefulWidget {
-  const AddPage({
-    Key? key,
-  }) : super(key: key);
+class EditPage extends StatefulWidget {
+  final ListOption option;
+
+  const EditPage({Key? key, required this.option}) : super(key: key);
 
   @override
-  State<AddPage> createState() => _AddPage();
+  State<EditPage> createState() => _EditPageState();
 }
 
-class _AddPage extends State<AddPage> {
-  TextEditingController nameController = TextEditingController();
+class _EditPageState extends State<EditPage> {
+  late TextEditingController nameController;
 
   final _formKey = GlobalKey<FormState>();
 
   @override
+  void initState() {
+    super.initState();
+    nameController = TextEditingController(text: widget.option.nome);
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final optionController = Provider.of<OptionController>(context);
-    final TextEditingController nameController = TextEditingController();
 
     return Form(
       key: _formKey,
@@ -29,7 +40,7 @@ class _AddPage extends State<AddPage> {
           toolbarHeight: 50,
           elevation: 10,
           backgroundColor: const Color.fromARGB(255, 93, 190, 125),
-          title: const Text('Nova Configuração'),
+          title: const Text('Editar Configuração'),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
@@ -62,6 +73,12 @@ class _AddPage extends State<AddPage> {
                         fillColor: Colors.white70,
                         filled: true,
                       ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor, insira um nome';
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   ElevatedButton(
@@ -72,12 +89,15 @@ class _AddPage extends State<AddPage> {
                       minimumSize: const Size(200, 50),
                     ),
                     onPressed: () {
-                      optionController.addOption(ListOption(
-                        nome: nameController.text,
-                      ));
-                      Navigator.pop(context);
+                      if (_formKey.currentState!.validate()) {
+                        optionController.updateOption(
+                          widget.option,
+                          ListOption(nome: nameController.text),
+                        );
+                        Navigator.pop(context);
+                      }
                     },
-                    child: const Text('Adicionar!'),
+                    child: const Text('Salvar'),
                   ),
                 ],
               ),

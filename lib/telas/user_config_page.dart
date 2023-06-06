@@ -1,17 +1,15 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:uniaudi/components/option/listoption.dart';
 import 'package:uniaudi/controller/options.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:uniaudi/telas/add_page.dart';
+import 'package:uniaudi/telas/edit_page.dart';
 
 class ConfigPage extends StatefulWidget {
-  const ConfigPage({Key? key,}) : super(key: key);
-
-  
+  const ConfigPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<ConfigPage> createState() => _ConfigPageState();
@@ -39,10 +37,10 @@ class _ConfigPageState extends State<ConfigPage> {
             icon: const Icon(Icons.add),
             onPressed: () {
               navigator!.push(
-                      MaterialPageRoute(
-                        builder: (context) => AddPage(),
-                      ),
-                    );
+                MaterialPageRoute(
+                  builder: (context) => const AddPage(),
+                ),
+              );
               // testeController.addOption(ListOption(nome: 'teste1'));
             },
           ),
@@ -53,7 +51,7 @@ class _ConfigPageState extends State<ConfigPage> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
+            child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.9,
               height: MediaQuery.of(context).size.height * 0.8,
               child: ListView.builder(
@@ -71,7 +69,14 @@ class _ConfigPageState extends State<ConfigPage> {
                               IconButton(
                                 icon: const Icon(Icons.edit),
                                 onPressed: () {
-                                  // Lógica para o botão de edição
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => EditPage(
+                                          option:
+                                              optionController.options[index]),
+                                    ),
+                                  );
                                 },
                               ),
                               IconButton(

@@ -30,7 +30,6 @@ class _TranscriptPageState extends State<TranscriptPage> {
   late stt.SpeechToText _speech;
   bool _isListening = false;
   String _text = 'Pressione o botão para começar a falar';
-  double _confidence = 1.0;
 
   @override
   void initState() {
@@ -47,7 +46,7 @@ class _TranscriptPageState extends State<TranscriptPage> {
         backgroundColor: const Color.fromARGB(255, 93, 190, 125),
         title: const Text('Transcrição de Voz'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -96,7 +95,6 @@ class _TranscriptPageState extends State<TranscriptPage> {
           onResult: (val) => setState(() {
             _text = val.recognizedWords;
             if (val.hasConfidenceRating && val.confidence > 0) {
-              _confidence = val.confidence;
             }
           }),
         );

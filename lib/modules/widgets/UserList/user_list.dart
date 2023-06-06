@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:uniaudi/controller/options.dart';
-import 'package:uniaudi/database/option_dao.dart';
 import 'package:uniaudi/telas/user_config_page.dart';
 import '../../../components/option/listoption.dart';
 
@@ -33,12 +32,12 @@ class _UserListState extends State<UserList> {
         ),
         child: Column(
           children: [
-            Stack(
-              alignment: Alignment.topRight,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                
                   children: [
                     Container(
                       height: 20,
@@ -55,15 +54,17 @@ class _UserListState extends State<UserList> {
                   ],
                 ),
                 IconButton(
-                  alignment: const Alignment(0, 100),
-                  onPressed: () {      
+                  onPressed: () {
                     navigator!.push(
                       MaterialPageRoute(
-                        builder: (context) => ConfigPage(),
+                        builder: (context) => const ConfigPage(),
                       ),
                     );
                   },
-                  icon: const Icon(Icons.add_circle_outline),
+                  icon: const Icon(
+                    Icons.add_circle_outline,
+                    size: 30,
+                  ),
                 ),
               ],
             ),
@@ -73,9 +74,9 @@ class _UserListState extends State<UserList> {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: optionController.options.length,
-                 itemBuilder: (context, index) {
+                itemBuilder: (context, index) {
                   return ListOption(nome: optionController.options[index].nome);
-                 },
+                },
               ),
             ),
           ],

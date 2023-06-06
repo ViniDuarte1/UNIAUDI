@@ -38,7 +38,8 @@ dependencies:
   highlight_text: ^1.6.0
   avatar_glow: ^2.0.2
   sqflite: ^2.2.8+4
-  flutter_slidable: ^3.0.0
+  # flutter_slidable: ^3.0.0
+  equalizer_flutter: ^0.0.1
 
 
 dev_dependencies:
