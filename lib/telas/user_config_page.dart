@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
@@ -36,12 +35,12 @@ class _ConfigPageState extends State<ConfigPage> {
             padding: const EdgeInsets.all(10),
             icon: const Icon(Icons.add),
             onPressed: () {
-              navigator!.push(
+              Navigator.push(
+                context,
                 MaterialPageRoute(
                   builder: (context) => const AddPage(),
                 ),
               );
-              // testeController.addOption(ListOption(nome: 'teste1'));
             },
           ),
         ],
@@ -58,63 +57,66 @@ class _ConfigPageState extends State<ConfigPage> {
                 itemCount: optionController.options.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.grey[200],
-                        child: ListTile(
-                          title: Text(optionController.options[index].nome),
-                          trailing: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              IconButton(
-                                icon: const Icon(Icons.edit),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => EditPage(
-                                          option:
-                                              optionController.options[index]),
-                                    ),
-                                  );
-                                },
-                              ),
-                              IconButton(
-                                icon: const Icon(Icons.delete),
-                                onPressed: () {
-                                  showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) {
-                                      return AlertDialog(
-                                        title: const Text('Confirmação'),
-                                        content: const Text(
-                                            'Tem certeza de que deseja excluir?'),
-                                        actions: [
-                                          TextButton(
-                                            child: const Text('Cancelar'),
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                          TextButton(
-                                            child: const Text('Excluir'),
-                                            onPressed: () {
-                                              optionController.removeOption(
-                                                  optionController
-                                                      .options[index]);
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      color: Colors.grey[200],
+                      child: ListTile(
+                        title: Text(optionController.options[index].nome),
+                        subtitle: Text(
+                            optionController.options[index].teste.toString()),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.edit),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => EditPage(
+                                        option: optionController
+                                            .options[index]),
+                                  ),
+                                );
+                              },
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.delete),
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: const Text('Confirmação'),
+                                      content: const Text(
+                                          'Tem certeza de que deseja excluir?'),
+                                      actions: [
+                                        TextButton(
+                                          child: const Text('Cancelar'),
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                        TextButton(
+                                          child: const Text('Excluir'),
+                                          onPressed: () {
+                                            optionController.removeOption(
+                                                optionController
+                                                    .options[index]);
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ],
                         ),
-                      ));
+                      ),
+                    ),
+                  );
                 },
               ),
             ),
@@ -124,72 +126,3 @@ class _ConfigPageState extends State<ConfigPage> {
     );
   }
 }
-
-  // return do listview
- // return const Slidable(
-                  //   key: ValueKey(0),
-                  //   endActionPane: ActionPane(
-                  //     motion: BehindMotion(),
-                  //     children: [
-                  //       SlidableAction(
-                  //         flex: 2,
-                  //         onPressed: () => onDismissed(context, index),
-                  //         backgroundColor: Color(0xFF7BC043),
-                  //         foregroundColor: Colors.white,
-                  //         icon: Icons.edit,
-                  //         label: 'Edit',
-                  //       ),
-                  //       SlidableAction(
-                  //         onPressed: doNothing,
-                  //         backgroundColor: Color(0xFF0392CF),
-                  //         foregroundColor: Colors.white,
-                  //         icon: Icons.delete,
-                  //         label: 'Delete',
-                  //       ),
-                  //     ],
-                  //   ),
-
-                  //   // The child of the Slidable is what the user sees when the
-                  //   // component is not dragged.
-                  //   child: ListTile(title: Text('Slide me')),
-                  // );
-
-                  // Dismissible(
-                  //   key: UniqueKey(),
-                  //   background: Container(color: Colors.yellow[700]),
-                  //   child: ListTile(
-                  //     leading: Icon(Icons.person),
-                  //     title: Text(testeController.options[index].nome),
-                  //     iconColor: Colors.indigo,
-                  //   ),
-                  //   onDismissed: (direction) {
-                  //     setState(() {
-                  //       testeController
-                  //           .removeOption(testeController.options[index]);
-                  //     });
-                  //   },
-                  //   confirmDismiss: (DismissDirection direction) async {
-                  //     final confirmed = await showDialog<bool>(
-                  //       context: context,
-                  //       builder: (context) {
-                  //         return AlertDialog(
-                  //           title:
-                  //               const Text('Are you sure you want to delete?'),
-                  //           actions: [
-                  //             TextButton(
-                  //               onPressed: () => Navigator.pop(context, false),
-                  //               child: const Text('No'),
-                  //             ),
-                  //             TextButton(
-                  //               onPressed: () => Navigator.pop(context, true),
-                  //               child: const Text('Yes'),
-                  //             )
-                  //           ],
-                  //         );
-                  //       },
-                  //     );
-                  //     log('Deletion confirmed: $confirmed');
-                  //     return confirmed;
-                  //   },
-                  //   secondaryBackground: Container(color: Colors.red),
-                  // );

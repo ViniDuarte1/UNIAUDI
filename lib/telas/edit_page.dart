@@ -14,13 +14,14 @@ class EditPage extends StatefulWidget {
 
 class _EditPageState extends State<EditPage> {
   late TextEditingController nameController;
-
+  int teste = 0;
   final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
     super.initState();
     nameController = TextEditingController(text: widget.option.nome);
+    teste = widget.option.teste;
   }
 
   @override
@@ -83,8 +84,8 @@ class _EditPageState extends State<EditPage> {
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color.fromARGB(255, 93, 190, 125),
+                      onPrimary: Colors.white,
+                      primary: const Color.fromARGB(255, 93, 190, 125),
                       elevation: 10,
                       minimumSize: const Size(200, 50),
                     ),
@@ -92,12 +93,23 @@ class _EditPageState extends State<EditPage> {
                       if (_formKey.currentState!.validate()) {
                         optionController.updateOption(
                           widget.option,
-                          ListOption(nome: nameController.text),
+                          ListOption(nome: nameController.text, teste: teste),
                         );
                         Navigator.pop(context);
                       }
                     },
                     child: const Text('Salvar'),
+                  ),
+                  Slider(
+                    value: teste.toDouble(),
+                    min: 0,
+                    max: 100,
+                    divisions: 100,
+                    onChanged: (newTeste) {
+                      setState(() {
+                        teste = newTeste.round();
+                      });
+                    },
                   ),
                 ],
               ),

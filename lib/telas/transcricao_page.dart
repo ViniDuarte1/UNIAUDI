@@ -4,14 +4,14 @@ import 'package:highlight_text/highlight_text.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class TranscriptPage extends StatefulWidget {
-  const TranscriptPage({super.key});
+  const TranscriptPage({Key? key});
 
   @override
   State<TranscriptPage> createState() => _TranscriptPageState();
 }
 
 class _TranscriptPageState extends State<TranscriptPage> {
-   final Map<String, HighlightedWord> _highlights = {
+  final Map<String, HighlightedWord> _highlights = {
     'flutter': HighlightedWord(
       onTap: () => print('flutter'),
       textStyle: const TextStyle(
@@ -26,7 +26,7 @@ class _TranscriptPageState extends State<TranscriptPage> {
         fontWeight: FontWeight.bold,
       ),
     ),
-   };
+  };
   late stt.SpeechToText _speech;
   bool _isListening = false;
   String _text = 'Pressione o botão para começar a falar';
@@ -83,8 +83,8 @@ class _TranscriptPageState extends State<TranscriptPage> {
     );
   }
 
-   void _listen() async {
-   if (!_isListening) {
+  void _listen() async {
+    if (!_isListening) {
       bool available = await _speech.initialize(
         onStatus: (val) => print('onStatus: $val'),
         onError: (val) => print('onError: $val'),
@@ -95,6 +95,7 @@ class _TranscriptPageState extends State<TranscriptPage> {
           onResult: (val) => setState(() {
             _text = val.recognizedWords;
             if (val.hasConfidenceRating && val.confidence > 0) {
+              // Adicione o código adicional aqui
             }
           }),
         );
@@ -104,5 +105,4 @@ class _TranscriptPageState extends State<TranscriptPage> {
       _speech.stop();
     }
   }
-
 }

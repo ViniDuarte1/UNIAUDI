@@ -4,23 +4,20 @@ import 'package:uniaudi/components/option/listoption.dart';
 import 'package:uniaudi/controller/options.dart';
 
 class AddPage extends StatefulWidget {
-  const AddPage({
-    Key? key,
-  }) : super(key: key);
+  const AddPage({Key? key}) : super(key: key);
 
   @override
-  State<AddPage> createState() => _AddPage();
+  _AddPageState createState() => _AddPageState();
 }
 
-class _AddPage extends State<AddPage> {
-  TextEditingController nameController = TextEditingController();
-
+class _AddPageState extends State<AddPage> {
   final _formKey = GlobalKey<FormState>();
+  int teste = 0;
+  final TextEditingController nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     final optionController = Provider.of<OptionController>(context);
-    final TextEditingController nameController = TextEditingController();
 
     return Form(
       key: _formKey,
@@ -72,12 +69,38 @@ class _AddPage extends State<AddPage> {
                       minimumSize: const Size(200, 50),
                     ),
                     onPressed: () {
-                      optionController.addOption(ListOption(
-                        nome: nameController.text,
-                      ));
+                      optionController.addOption(
+                        ListOption(
+                          nome: nameController.text,
+                          teste: teste,
+                        ),
+                      );
                       Navigator.pop(context);
                     },
                     child: const Text('Adicionar!'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(teste.toString()),
+                          Slider(
+                            value: teste.toDouble(),
+                            min: 0,
+                            max: 100,
+                            divisions: 100,
+                            onChanged: (newTeste) {
+                              setState(() {
+                                teste = newTeste.round();
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),

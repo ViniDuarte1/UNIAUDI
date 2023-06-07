@@ -37,7 +37,6 @@ class _UserListState extends State<UserList> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Row(
-                
                   children: [
                     Container(
                       height: 20,
@@ -75,7 +74,10 @@ class _UserListState extends State<UserList> {
                 scrollDirection: Axis.horizontal,
                 itemCount: optionController.options.length,
                 itemBuilder: (context, index) {
-                  return ListOption(nome: optionController.options[index].nome);
+                  return ListOption(
+                    nome: optionController.options[index].nome,
+                    teste: optionController.options[index].teste,
+                  );
                 },
               ),
             ),

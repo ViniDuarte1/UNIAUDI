@@ -5,24 +5,18 @@ import 'package:uniaudi/controller/config_controller.dart';
 import 'package:uniaudi/controller/options.dart';
 import 'package:uniaudi/telas/home_page.dart';
 
-
-
-
-
-
 void main() {
   runApp(MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => ConfigController()),
-        ChangeNotifierProvider(create: (_) => OptionController(options: [])),
-      ],
-      child: const MyApp(),
-     ),);
-     
+    providers: [
+      ChangeNotifierProvider(create: (_) => ConfigController()),
+      ChangeNotifierProvider(create: (_) => OptionController(options: [])),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   // This widget is the root of your application.
   @override
@@ -39,12 +33,10 @@ class MyApp extends StatelessWidget {
           toolbarHeight: 80,
         ),
       ),
-       initialRoute: '/home',
+      initialRoute: '/home',
       routes: {
-        '/home': (context) =>  const HomePage(),
-      }
+        '/home': (context) => const HomePage(),
+      },
     );
   }
 }
-
-

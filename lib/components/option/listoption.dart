@@ -3,8 +3,9 @@ import 'package:provider/provider.dart';
 import '../../controller/config_controller.dart';
 
 class ListOption extends StatefulWidget {
-  const ListOption({super.key, required this.nome});
+  const ListOption({super.key, required this.nome, required this.teste, });
   final String nome;
+  final int teste;
 
   @override
   State<ListOption> createState() => _ListOptionState();

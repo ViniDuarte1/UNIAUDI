@@ -14,12 +14,14 @@ class MyList extends StatefulWidget {
 }
 
 class _MyListState extends State<MyList> {
-  String stringASerMostradaNoSegundoWidget = '';
-
   @override
   Widget build(BuildContext context) {
-
-    final List<String> nomes = ['PRESSET 1','PRESSET 2','PRESSET 3','PRESSET 4','PRESSET 5','PRESSET 6','PRESSET 7',];
+    final List<ListOption> options = [
+      ListOption(nome: 'teste', teste:  3),
+      ListOption(nome: 'teste2', teste: 4 ),
+      ListOption(nome: 'teste3', teste:  4),
+      ListOption(nome: 'teste4', teste:  4),
+      ];
 
     return Padding(
       padding: const EdgeInsets.all(10),
@@ -41,7 +43,7 @@ class _MyListState extends State<MyList> {
                   width: MediaQuery.of(context).size.width * 0.7,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color:const Color.fromARGB(153, 180, 177, 177),
+                    color: const Color.fromARGB(153, 180, 177, 177),
                   ),
                   child: Text(
                     widget.texttitle,
@@ -50,14 +52,14 @@ class _MyListState extends State<MyList> {
                 ),
               ],
             ),
-SizedBox(
-  width: MediaQuery.of(context).size.width,
-  height: 80,
-  child: ListView(
-    scrollDirection: Axis.horizontal,
-    children: nomes.map((nome) => ListOption(nome: nome)).toList(),
-  ),
-)
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 80,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: options,
+              ),
+            )
           ],
         ),
       ),
