@@ -59,10 +59,13 @@ class _ConfigPageState extends State<ConfigPage> {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      color: Colors.grey[200],
+                      decoration:  BoxDecoration(
+                         color:const  Color.fromARGB(255,98, 217, 183),
+                          borderRadius: BorderRadius.circular(10),
+                      ),                    
                       child: ListTile(
                         title: Text(optionController.options[index].nome),
-                        subtitle: Text(
+                        subtitle: Text( "Hz: " +
                             optionController.options[index].teste.toString()),
                         trailing: Row(
                           mainAxisSize: MainAxisSize.min,

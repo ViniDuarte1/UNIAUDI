@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                   
                 ),
                 //TESTE DE BOTAO
-                Row(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
                     Transcricao(),

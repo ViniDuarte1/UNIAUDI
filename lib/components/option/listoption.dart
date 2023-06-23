@@ -24,18 +24,19 @@ class _ListOptionState extends State<ListOption> {
       child: Container(
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.grey[300],
+        color: Color.fromARGB(255,98, 217, 183),
         ),
-        width: 70,
-        height: 70,
+        width: 100,
+        height: 38,
         child: TextButton(
           onPressed: () {
             configController.selectconfig(widget.nome);    
           },
           child: Text(widget.nome,
           style: const TextStyle(
-            color: Colors.red,
-            fontSize: 10,
+            color: Colors.black,
+            fontSize: 15,
+            fontWeight: FontWeight.bold
           ),
         ),
       ),

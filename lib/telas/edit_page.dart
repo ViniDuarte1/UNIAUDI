@@ -100,16 +100,28 @@ class _EditPageState extends State<EditPage> {
                     },
                     child: const Text('Salvar'),
                   ),
-                  Slider(
-                    value: teste.toDouble(),
-                    min: 0,
-                    max: 100,
-                    divisions: 100,
-                    onChanged: (newTeste) {
-                      setState(() {
-                        teste = newTeste.round();
-                      });
-                    },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text("Hz: "+teste.toString()),
+                          Slider(
+                            value: teste.toDouble(),
+                            min: 0,
+                            max: 600,
+                            divisions: 600,
+                            onChanged: (newTeste) {
+                              setState(() {
+                                teste = newTeste.round();
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),

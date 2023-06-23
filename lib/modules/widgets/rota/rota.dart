@@ -15,11 +15,11 @@ class _RotaState extends State<Rota> {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.4,
-        height: MediaQuery.of(context).size.height * 0.7 * 0.2,
+        width: MediaQuery.of(context).size.width * 0.9,
+        height: MediaQuery.of(context).size.height * 0.4 * 0.2,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.white,
+          color: Color.fromRGBO(3, 140, 101, 1),
         ),
         child: Column(
           children: [
@@ -28,11 +28,14 @@ class _RotaState extends State<Rota> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  height: 20,
+                  height: 15,
                   width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: const Color.fromARGB(153, 180, 177, 177),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.black
+                      )
+                    )
                   ),
                   child: const Text(
                     "ROTA",
@@ -41,19 +44,22 @@ class _RotaState extends State<Rota> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            IconButton(
-              iconSize: 50,
-              icon: const Icon(Icons.map),
-              onPressed: () {
-                navigator!.push(
-                  MaterialPageRoute(
-                    builder: (context) => const RoutePage(),
-                  ),
-                );
-              },
+            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  iconSize: 20,
+                  icon: const Icon(Icons.map),
+                  onPressed: () {
+                    navigator!.push(
+                      MaterialPageRoute(
+                        builder: (context) => const RoutePage(),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ],
         ),

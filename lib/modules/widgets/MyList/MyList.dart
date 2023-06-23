@@ -34,23 +34,23 @@ class _MyListState extends State<MyList> {
         ),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  height: 20,
-                  width: MediaQuery.of(context).size.width * 0.7,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: const Color.fromARGB(153, 180, 177, 177),
+            Container(
+              height: 20,
+              width: MediaQuery.of(context).size.width * 0.7,
+              decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.black
+                      )
+                    )
                   ),
-                  child: Text(
-                    widget.texttitle,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
+              child: Text(
+                widget.texttitle,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(
+              height: 15,
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,

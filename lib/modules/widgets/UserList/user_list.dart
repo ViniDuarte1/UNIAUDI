@@ -41,10 +41,13 @@ class _UserListState extends State<UserList> {
                     Container(
                       height: 20,
                       width: MediaQuery.of(context).size.width * 0.7,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(153, 180, 177, 177),
-                      ),
+                      decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.black
+                      )
+                    )
+                  ),
                       child: Text(
                         widget.texttitle,
                         textAlign: TextAlign.center,

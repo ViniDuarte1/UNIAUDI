@@ -86,12 +86,12 @@ class _AddPageState extends State<AddPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(teste.toString()),
+                          Text("Hz: "+teste.toString()),
                           Slider(
                             value: teste.toDouble(),
                             min: 0,
-                            max: 100,
-                            divisions: 100,
+                            max: 600,
+                            divisions: 600,
                             onChanged: (newTeste) {
                               setState(() {
                                 teste = newTeste.round();
