@@ -38,8 +38,6 @@ class _ListOptionState extends State<ListOption> {
           style: const TextStyle(
             color: Colors.black,
             fontSize: 15,
-            fontWeight: FontWeight.bold
-           
           ),
         ),
       ),

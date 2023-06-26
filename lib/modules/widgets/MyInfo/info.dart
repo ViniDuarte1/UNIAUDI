@@ -63,7 +63,7 @@ class _MyInfoState extends State<MyInfo> {
                             style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 15,
-                                fontWeight: FontWeight.bold),
+                                ),
                           ),
                         ),
                       ),
