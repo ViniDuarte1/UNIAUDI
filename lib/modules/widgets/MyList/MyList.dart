@@ -17,10 +17,11 @@ class _MyListState extends State<MyList> {
   @override
   Widget build(BuildContext context) {
     final List<ListOption> options = [
-      ListOption(nome: 'teste', teste:  3),
-      ListOption(nome: 'teste2', teste: 4 ),
-      ListOption(nome: 'teste3', teste:  4),
-      ListOption(nome: 'teste4', teste:  4),
+      ListOption(nome: 'TRABALHO', teste:  3, teste2: 2, teste3: 2,),
+      ListOption(nome: 'TRANSITO', teste: 4, teste2: 2, teste3: 2, ),
+      ListOption(nome: 'URBANO', teste:  4, teste2: 2, teste3: 2,),
+      ListOption(nome: 'BIBLIOTECA', teste:  4, teste2: 2, teste3: 2,),
+      ListOption(nome: 'ESCOLA', teste:  4, teste2: 2, teste3: 2,),
       ];
 
     return Padding(

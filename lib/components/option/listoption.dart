@@ -3,9 +3,11 @@ import 'package:provider/provider.dart';
 import '../../controller/config_controller.dart';
 
 class ListOption extends StatefulWidget {
-  const ListOption({super.key, required this.nome, required this.teste, });
+  const ListOption({super.key, required this.nome, required this.teste, required this.teste2, required this.teste3, });
   final String nome;
   final int teste;
+  final int teste2;
+  final int teste3;
 
   @override
   State<ListOption> createState() => _ListOptionState();
@@ -37,6 +39,7 @@ class _ListOptionState extends State<ListOption> {
             color: Colors.black,
             fontSize: 15,
             fontWeight: FontWeight.bold
+           
           ),
         ),
       ),

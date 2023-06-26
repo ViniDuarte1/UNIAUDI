@@ -19,7 +19,7 @@ class OptionController extends ChangeNotifier {
     notifyListeners();
   }
 
-   void updateOption(ListOption oldOption, ListOption newOption) {
+   void updateOption(ListOption oldOption, ListOption newOption, ) {
     final index = options.indexOf(oldOption);
     if (index != -1) {
       options[index] = newOption;

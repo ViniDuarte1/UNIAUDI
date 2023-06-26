@@ -42,12 +42,8 @@ class _UserListState extends State<UserList> {
                       height: 20,
                       width: MediaQuery.of(context).size.width * 0.7,
                       decoration: const BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Colors.black
-                      )
-                    )
-                  ),
+                          border:
+                              Border(bottom: BorderSide(color: Colors.black))),
                       child: Text(
                         widget.texttitle,
                         textAlign: TextAlign.center,
@@ -80,6 +76,8 @@ class _UserListState extends State<UserList> {
                   return ListOption(
                     nome: optionController.options[index].nome,
                     teste: optionController.options[index].teste,
+                    teste2: optionController.options[index].teste2,
+                    teste3: optionController.options[index].teste3,
                   );
                 },
               ),

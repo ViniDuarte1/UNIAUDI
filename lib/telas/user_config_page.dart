@@ -65,8 +65,13 @@ class _ConfigPageState extends State<ConfigPage> {
                       ),                    
                       child: ListTile(
                         title: Text(optionController.options[index].nome),
-                        subtitle: Text( "Hz: " +
-                            optionController.options[index].teste.toString()),
+                        subtitle: Text( "Grave  Hz: " +
+                            optionController.options[index].teste.toString() + 
+                            "\nMédio  Hz: " +
+                            optionController.options[index].teste2.toString() + 
+                            "\nAgudo  Hz: " +
+                            optionController.options[index].teste3.toString()
+                            ),
                         trailing: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
